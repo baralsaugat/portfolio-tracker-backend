@@ -1,6 +1,12 @@
+import dotenv from "dotenv"
+dotenv.config();
+
 import express from 'express'
 
 const app = express()
+
+import mongoClient from './config/db.js'
+mongoClient();
 
 app.get('/', (req, res) => {
   res.send('Hello World')
