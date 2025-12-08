@@ -8,6 +8,21 @@ const app = express()
 import mongoClient from './config/db.js'
 mongoClient();
 
+
+// loading the router
+import userRouter from "./routers/users.router.js"
+
+
+app.use(express.json())
+
+
+
+// use the router
+app.use("/api/v1/user", userRouter)
+
+
+
+
 app.get('/', (req, res) => {
   res.send('Hello World')
 })
