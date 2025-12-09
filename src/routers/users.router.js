@@ -3,14 +3,17 @@ import express from "express"
 
 const router = express.Router();
 
-
+import { hashPassword } from "../helpers/bcrypt.helper.js";
 import {createUser} from "../models/users/users.model.js"
 
 // registration
 router.post("/", async(req, res) =>{
     
     try {
-       const result = await createUser({...req.body})
+        const {password}= req.body
+        const hashPass = await hashPassword(password)
+        const newUser= {...req.body, password:hashPass}
+       const result = await createUser(newUser)
 
        if(result?._id){
         return res.json({
