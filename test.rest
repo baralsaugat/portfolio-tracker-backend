@@ -2,10 +2,13 @@ POST http://localhost:8000/api/v1/user
 Content-Type: application/json
 
 {
-    "email": "saugatbaral@gmail.com",
-    "password":"password"
+    "fName":"Mayalu",
+    "lName":"baral",
+    "email": "baralsaugat@gmail.com",
+    "password":"123456789"
     
 }
+
 
 ###
 POST http://localhost:8000/api/v1/login
@@ -17,7 +20,15 @@ Content-Type: application/json
     
 }
 
+# exercise router
 ###
-GET http://localhost:8000/api/v1/user
+POST http://localhost:8000/api/v1/exercise
+Content-Type: application/json
+
+
+    {"exerciseName": "bench press", "exerciseType":"chest"}
+    
+
+
 
 
