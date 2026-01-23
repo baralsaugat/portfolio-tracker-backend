@@ -1,17 +1,17 @@
 import express from "express";
-import { createExercise } from "../models/exercise/exercise.model.js";
+import { createWorkOutPlan } from "../models/workoutPlanner/workoutPlanner.model.js";
 
 const router = express.Router();
 
-// registration
+// creating workoutplan
 router.post("/", async (req, res) => {
   try {
-    const result = await createExercise(req.body);
+    const result = await createWorkOutPlan(req.body);
 
     if (result?._id) {
       return res.json({
         status: "success",
-        message: "Exercise created successfully",
+        message: "WorkOut plan created successfully",
       });
     }
     res.json({
@@ -30,6 +30,6 @@ export default router;
 router.get("/", async (req, res) => {
   res.send({
     status: "ok",
-    message: "you are in user api",
+    message: "you are in workout planner api",
   });
 });
