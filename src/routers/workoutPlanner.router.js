@@ -6,6 +6,8 @@ const router = express.Router();
 // creating workoutplan
 router.post("/", async (req, res) => {
   try {
+
+    const 
     const result = await createWorkOutPlan(req.body);
 
     if (result?._id) {

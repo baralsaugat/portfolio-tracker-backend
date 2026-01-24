@@ -19,7 +19,7 @@ router.post("/", async (req, res, next) => {
       const accessJWT = await createAccessJWT(email, result._id);
 
       const refreshJWT = await createRefreshJWT(email, result._id);
-      console.log("refresh:" + refreshJWT);
+      
       return res.json({
         status: "success",
         message: "login success, welcome",
