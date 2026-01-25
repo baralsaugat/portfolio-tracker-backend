@@ -27,8 +27,17 @@ Content-Type: application/json
 
 
     {"exerciseName": "bench press", "exerciseType":"chest"}
-    
+
+
+### 
+POST http://localhost:8000/api/v1/workoutplanner
+Content-Type: application/json
+
+
+    {"workOutPlannerName": "my workout plan", "refreshJWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJhcmFsQGJhcmFsLmNvbSIsImlhdCI6MTc2OTMxODUyNiwiZXhwIjoxNzY5NDA0OTI2fQ.kpjyRvwzKfCr0fWQkg9iIPuXn-eCsaFQr-vu_RCeEMk"}
 
 
 
 
+###
+GET http://localhost:8000/api/v1/workoutplanner

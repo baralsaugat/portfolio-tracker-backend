@@ -6,6 +6,3 @@ export const createWorkOutPlan = (workourPlanObj) => {
 };
 
 
-export const getUserId = (refreshJWt )=>{
-  return userSchema.find
-}

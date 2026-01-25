@@ -23,6 +23,9 @@ export const workoutPlannerSchema = mongoose.Schema(
     userId: {
       type: String,
     },
+    userEmail: {
+      type: String,
+    },
   },
   { timestamp: true },
 );

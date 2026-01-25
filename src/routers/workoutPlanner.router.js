@@ -1,14 +1,19 @@
 import express from "express";
 import { createWorkOutPlan } from "../models/workoutPlanner/workoutPlanner.model.js";
+import { getUserEmailByRefreshJWT } from "../models/users/users.model.js";
 
 const router = express.Router();
 
 // creating workoutplan
 router.post("/", async (req, res) => {
   try {
-
-    const 
-    const result = await createWorkOutPlan(req.body);
+  
+    const { refreshJWT } = req.body;
+    const userEmailFromUserSchema = await getUserEmailByRefreshJWT(refreshJWT);
+console.log(userEmailFromUserSchema);
+    const result = await createWorkOutPlan(...req.body, {
+      userEmail: userEmailFromUserSchema,
+    });
 
     if (result?._id) {
       return res.json({

@@ -24,7 +24,7 @@ app.use(cors());
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/login", loginRouter);
 app.use("/api/v1/exercise", exerciseRouter);
-app.use("/api/v1/workoutPlanner", workOutPlannerRouter);
+app.use("/api/v1/workoutplanner", workOutPlannerRouter);
 
 
 app.get("/", (req, res) => {
