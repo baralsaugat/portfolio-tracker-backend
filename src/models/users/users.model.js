@@ -13,7 +13,7 @@ export const getUserByEmail = (emailArg) => {
 };
 
 export const getUserEmailByRefreshJWT = (token) => {
-  return usersSchema.findOne({ email: {"refreshJWT.token":token} });
+  return userSchema.findOne({ "refreshJWT.token": token }).select("email");
 };
 
 export const storeRefreshJWT = async (_id, token) => {

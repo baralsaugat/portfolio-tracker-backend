@@ -7,13 +7,15 @@ const router = express.Router();
 // creating workoutplan
 router.post("/", async (req, res) => {
   try {
-  
     const { refreshJWT } = req.body;
+
     const userEmailFromUserSchema = await getUserEmailByRefreshJWT(refreshJWT);
-console.log(userEmailFromUserSchema);
-    const result = await createWorkOutPlan(...req.body, {
-      userEmail: userEmailFromUserSchema,
-    });
+    console.log(userEmailFromUserSchema);
+    const workOutData = {
+      ...req.body,
+      userEmail: userEmailFromUserSchema.email,
+    };
+    const result = await createWorkOutPlan(workOutData);
 
     if (result?._id) {
       return res.json({
