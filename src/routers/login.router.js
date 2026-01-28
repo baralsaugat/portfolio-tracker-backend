@@ -10,7 +10,7 @@ router.post("/", async (req, res, next) => {
     const { email, password } = req.body;
 
     const result = await getUserByEmail(email);
-
+    const userId = result._id;
     const hashedPWFromDB = result.password;
 
     const checkPassword = comparePassword(password, hashedPWFromDB);
@@ -19,12 +19,13 @@ router.post("/", async (req, res, next) => {
       const accessJWT = await createAccessJWT(email, result._id);
 
       const refreshJWT = await createRefreshJWT(email, result._id);
-      
+
       return res.json({
         status: "success",
         message: "login success, welcome",
         accessJWT,
         refreshJWT,
+        userId,
       });
     }
     res.json({
