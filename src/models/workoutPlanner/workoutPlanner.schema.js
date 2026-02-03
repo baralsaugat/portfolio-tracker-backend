@@ -7,16 +7,19 @@ export const workoutPlannerSchema = mongoose.Schema(
     },
     dateCreated: {
       type: Date,
+      require: true,
     },
     exerciseName: {
       type: String,
     },
-    dayOfWorkut: {
+
+    daysOfWorkut: {
       type: Number,
     },
     orderOfExerciseEachday: {
       type: Number,
     },
+
     isCreatedByUser: {
       type: Boolean,
     },
