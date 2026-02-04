@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const workoutLogSchema = mongoose.Schema(
   {
-    WorkoutPlanId: {
+    workoutPlanId: {
       type: String,
     },
     dateCreated: {
