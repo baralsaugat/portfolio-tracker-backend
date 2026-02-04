@@ -34,15 +34,10 @@ POST http://localhost:8000/api/v1/workoutplanner
 Content-Type: application/json
 
 
-    {"workOutPlannerName": "my workout plan", "refreshJWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJhcmFsc2F1Z2F0QGdtYWlsLmNvbSIsImlhdCI6MTc3MDA4NzMyMiwiZXhwIjoxNzcwMTczNzIyfQ._Lv80JAm7SFxNoikO2tfRW2LHdfGaullvC6XoJCCUic"
-, "exerciseName": "Incline Dumbbell Press",
-    "sets":[  {"setNumber": "3",
-      "reps": 8,
-      "weight": 75}, {
-      "setNumber": "4",
-      "reps": 8,
-      "weight": 75
-    }]}
+    {"workOutPlannerName": "my workout plan", "refreshJWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJhcmFsc2F1Z2F0QGdtYWlsLmNvbSIsImlhdCI6MTc3MDIwNDEwMywiZXhwIjoxNzcwMjkwNTAzfQ.ne08z_ndiwR-TqSjOIlo37mE6UJMDBhxIAJlKXGsM2Q"
+, "exerciseName": "Incline Dumbbell Press"
+
+    }
 
 
 

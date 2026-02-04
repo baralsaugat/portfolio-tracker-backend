@@ -10,17 +10,18 @@ router.post("/", async (req, res) => {
     const { refreshJWT } = req.body;
 
     const userEmailFromUserSchema = await getUserEmailByRefreshJWT(refreshJWT);
-    console.log(userEmailFromUserSchema);
+
     const workOutData = {
       ...req.body,
       userEmail: userEmailFromUserSchema.email,
     };
     const result = await createWorkOutPlan(workOutData);
-
+    const workOutPlanId = result._id;
     if (result?._id) {
       return res.json({
         status: "success",
         message: "WorkOut plan created successfully",
+        workOutPlanId,
       });
     }
     res.json({
