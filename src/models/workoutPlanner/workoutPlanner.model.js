@@ -5,4 +5,6 @@ export const createWorkOutPlan = (workourPlanObj) => {
   return workoutPlannerSchema(workourPlanObj).save();
 };
 
-
+export const getWorkoutPlanByWorkoutId = (workoutIdArg) => {
+  return workoutPlannerSchema.findOne({ _id: workoutIdArg });
+};

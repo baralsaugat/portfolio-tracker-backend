@@ -27,9 +27,3 @@ router.post("/", async (req, res) => {
 });
 export default router;
 
-router.get("/", async (req, res) => {
-  res.send({
-    status: "ok",
-    message: "you are in user api",
-  });
-});

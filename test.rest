@@ -34,7 +34,7 @@ POST http://localhost:8000/api/v1/workoutplanner
 Content-Type: application/json
 
 
-    {"workOutPlannerName": "my workout plan", "refreshJWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJhcmFsc2F1Z2F0QGdtYWlsLmNvbSIsImlhdCI6MTc3MDIwNDEwMywiZXhwIjoxNzcwMjkwNTAzfQ.ne08z_ndiwR-TqSjOIlo37mE6UJMDBhxIAJlKXGsM2Q"
+    {"workOutPlannerName": "my workout plan", "refreshJWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJhcmFsc2F1Z2F0QGdtYWlsLmNvbSIsImlhdCI6MTc3MDgwNjk5NSwiZXhwIjoxNzcwODkzMzk1fQ.lBMP2vqUBdkCIb0vDKlK1xB2VG1IYZSWW8KCIsZgWcE"
 , "exerciseName": "Incline Dumbbell Press"
 
     }
@@ -43,4 +43,4 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:8000/api/v1/workoutplanner
+GET http://localhost:8000/api/v1/workoutplanner/user/6970a5efc028a1d37d2048bd/workoutplan/698c5ee3ac57a97ddc42e336

@@ -1,5 +1,8 @@
 import express from "express";
-import { createWorkOutPlan } from "../models/workoutPlanner/workoutPlanner.model.js";
+import {
+  createWorkOutPlan,
+  getWorkoutPlanByWorkoutId,
+} from "../models/workoutPlanner/workoutPlanner.model.js";
 import { getUserEmailByRefreshJWT } from "../models/users/users.model.js";
 
 const router = express.Router();
@@ -17,11 +20,14 @@ router.post("/", async (req, res) => {
     };
     const result = await createWorkOutPlan(workOutData);
     const workOutPlanId = result._id;
+    const { workOutPlannerName, totalDaysOfWorkout } = result;
     if (result?._id) {
       return res.json({
         status: "success",
         message: "WorkOut plan created successfully",
         workOutPlanId,
+        workOutPlannerName,
+        totalDaysOfWorkout,
       });
     }
     res.json({
@@ -37,9 +43,28 @@ router.post("/", async (req, res) => {
 });
 export default router;
 
-router.get("/", async (req, res) => {
-  res.send({
-    status: "ok",
-    message: "you are in workout planner api",
-  });
+router.get("/user/:userId/workoutplan/:workoutplanId", async (req, res) => {
+  try {
+    const { userId, workoutplanId } = req.params;
+    console.log(workoutplanId);
+
+    const result = await getWorkoutPlanByWorkoutId(workoutplanId);
+    if (result) {
+      return res.json({
+        status: "success",
+        message: "list of the workout plan",
+        result,
+      });
+    } else {
+      return res.json({
+        status: "error",
+        message: "could not get the workout data",
+      });
+    }
+  } catch (error) {
+    res.json({
+      status: "error",
+      message: error.message,
+    });
+  }
 });
