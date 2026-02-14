@@ -46,7 +46,7 @@ export default router;
 router.get("/user/:userId/workoutplan/:workoutplanId", async (req, res) => {
   try {
     const { userId, workoutplanId } = req.params;
-    console.log(workoutplanId);
+
 
     const result = await getWorkoutPlanByWorkoutId(workoutplanId);
     if (result) {
