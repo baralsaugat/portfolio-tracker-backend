@@ -1,9 +1,13 @@
 import express from "express";
 import {
+  getWorkOutplanHistoryByUserId,
   createWorkOutPlan,
   getWorkoutPlanByWorkoutId,
 } from "../models/workoutPlanner/workoutPlanner.model.js";
-import { getUserEmailByRefreshJWT } from "../models/users/users.model.js";
+import {
+  getUserEmailByRefreshJWT,
+  getUserNameByUserId,
+} from "../models/users/users.model.js";
 
 const router = express.Router();
 
@@ -14,13 +18,15 @@ router.post("/", async (req, res) => {
 
     const userEmailFromUserSchema = await getUserEmailByRefreshJWT(refreshJWT);
 
+    console.log(userName);
     const workOutData = {
       ...req.body,
       userEmail: userEmailFromUserSchema.email,
+      userId: userEmailFromUserSchema._id,
     };
     const result = await createWorkOutPlan(workOutData);
     const workOutPlanId = result._id;
-    const { workOutPlannerName, totalDaysOfWorkout } = result;
+    const { workOutPlannerName, totalDaysOfWorkout, userId } = result;
     if (result?._id) {
       return res.json({
         status: "success",
@@ -28,6 +34,7 @@ router.post("/", async (req, res) => {
         workOutPlanId,
         workOutPlannerName,
         totalDaysOfWorkout,
+        userId,
       });
     }
     res.json({
@@ -43,10 +50,34 @@ router.post("/", async (req, res) => {
 });
 export default router;
 
+router.get("/user/:userId", async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const result = await getWorkOutplanHistoryByUserId(userId);
+    const userName = await getUserNameByUserId(userId);
+    if (result?._id) {
+      return res.json({
+        status: "success",
+        message: "Workout plan created history available",
+        result,
+        userName,
+      });
+    }
+    return res.json({
+      status: "error",
+      message: "no workout history available, create now",
+    });
+  } catch (error) {
+    return res.json({
+      status: "errror",
+      message: error.message,
+    });
+  }
+});
+
 router.get("/user/:userId/workoutplan/:workoutplanId", async (req, res) => {
   try {
     const { userId, workoutplanId } = req.params;
-
 
     const result = await getWorkoutPlanByWorkoutId(workoutplanId);
     if (result) {

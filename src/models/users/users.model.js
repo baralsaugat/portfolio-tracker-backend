@@ -12,6 +12,10 @@ export const getUserByEmail = (emailArg) => {
   return userSchema.findOne({ email: emailArg });
 };
 
+export const getUserNameByUserId = (userIdArg) => {
+  return userSchema.findOne({ _id: userIdArg }).distinct("fName");
+};
+
 export const getUserEmailByRefreshJWT = (token) => {
   return userSchema.findOne({ "refreshJWT.token": token }).select("email");
 };

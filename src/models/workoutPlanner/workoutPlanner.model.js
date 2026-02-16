@@ -8,3 +8,7 @@ export const createWorkOutPlan = (workourPlanObj) => {
 export const getWorkoutPlanByWorkoutId = (workoutIdArg) => {
   return workoutPlannerSchema.findOne({ _id: workoutIdArg });
 };
+
+export const getWorkOutplanHistoryByUserId = (userIdArg) => {
+  return workoutPlannerSchema.findOne({ userId: userIdArg });
+};
