@@ -2,9 +2,9 @@ POST http://localhost:8000/api/v1/user
 Content-Type: application/json
 
 {
-    "fName":"Mayalu",
+    "fName":"bebudi",
     "lName":"baral",
-    "email": "baralsaugat@gmail.com",
+    "email": "saugat@gmail.com",
     "password":"123456789"
     
 }
@@ -15,7 +15,7 @@ POST http://localhost:8000/api/v1/login
 Content-Type: application/json
 
 {
-    "email": "baralsaugat@gmail.com",
+    "email": "saugat@gmail.com",
     "password":"123456789"
     
 }
@@ -34,7 +34,7 @@ POST http://localhost:8000/api/v1/workoutplanner
 Content-Type: application/json
 
 
-    {"workOutPlannerName": "my workout plan", "refreshJWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJhcmFsc2F1Z2F0QGdtYWlsLmNvbSIsImlhdCI6MTc3MTIzODYzMCwiZXhwIjoxNzcxMzI1MDMwfQ.lsry52RBPv3f6gs9VcohjZ3LJKxJFeGsLUUNas1M2yc"
+    {"workOutPlannerName": "my workout plan", "refreshJWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhdWdhdEBnbWFpbC5jb20iLCJpYXQiOjE3NzEzMjkwMzMsImV4cCI6MTc3MTQxNTQzM30.wi4LZ-YKqRQVen9kmh3WHUUMmXpzrDq18UCsyACSoUA"
 , "exerciseName": "Incline Dumbbell Press"
 
     }
@@ -51,4 +51,4 @@ GET http://localhost:8000/api/v1/workoutplanner/user/6970a5efc028a1d37d2048bd/wo
 
 
 ###
-GET http://localhost:8000/api/v1/workoutplanner/user/6970a5efc028a1d37d2048bd
+GET http://localhost:8000/api/v1/workoutplanner/user/69943a91679808ca5d040251

@@ -5,8 +5,10 @@ import {
   getWorkoutPlanByWorkoutId,
 } from "../models/workoutPlanner/workoutPlanner.model.js";
 import {
+  getIsWorkOutCreationHistory,
   getUserEmailByRefreshJWT,
   getUserNameByUserId,
+  updateWorkOutPlanCreationByUserId,
 } from "../models/users/users.model.js";
 
 const router = express.Router();
@@ -18,7 +20,6 @@ router.post("/", async (req, res) => {
 
     const userEmailFromUserSchema = await getUserEmailByRefreshJWT(refreshJWT);
 
-    console.log(userName);
     const workOutData = {
       ...req.body,
       userEmail: userEmailFromUserSchema.email,
@@ -28,6 +29,8 @@ router.post("/", async (req, res) => {
     const workOutPlanId = result._id;
     const { workOutPlannerName, totalDaysOfWorkout, userId } = result;
     if (result?._id) {
+      console.log(userId);
+      await updateWorkOutPlanCreationByUserId(userId);
       return res.json({
         status: "success",
         message: "WorkOut plan created successfully",
@@ -53,19 +56,29 @@ export default router;
 router.get("/user/:userId", async (req, res) => {
   try {
     const { userId } = req.params;
-    const result = await getWorkOutplanHistoryByUserId(userId);
+    const checkForWorkOutHistory = await getIsWorkOutCreationHistory(userId);
+    const isWorkOutHistory = checkForWorkOutHistory.workoutPlanCreatedMinOne;
     const userName = await getUserNameByUserId(userId);
-    if (result?._id) {
-      return res.json({
-        status: "success",
-        message: "Workout plan created history available",
-        result,
-        userName,
-      });
+    console.log(isWorkOutHistory);
+
+    if (isWorkOutHistory) {
+      const result = await getWorkOutplanHistoryByUserId(userId);
+
+      if (result?._id) {
+        return res.json({
+          status: "success",
+          message: "Workout plan created history available",
+          result,
+          userName,
+          isWorkOutHistory,
+        });
+      }
     }
     return res.json({
       status: "error",
       message: "no workout history available, create now",
+      userName,
+      // need to work on this to get the good practice
     });
   } catch (error) {
     return res.json({

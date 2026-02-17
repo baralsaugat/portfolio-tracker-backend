@@ -16,6 +16,18 @@ export const getUserNameByUserId = (userIdArg) => {
   return userSchema.findOne({ _id: userIdArg }).distinct("fName");
 };
 
+export const getIsWorkOutCreationHistory = (userIdArg) => {
+  return userSchema
+    .findOne({ _id: userIdArg })
+    .distinct("workoutPlanCreatedMinOne");
+};
+
+export const updateWorkOutPlanCreationByUserId = (userIdArg) => {
+  return userSchema.updateOne(
+    { _id: userIdArg },
+    { workoutPlanCreatedMinOne: true },
+  );
+};
 export const getUserEmailByRefreshJWT = (token) => {
   return userSchema.findOne({ "refreshJWT.token": token }).select("email");
 };

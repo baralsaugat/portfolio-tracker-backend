@@ -19,6 +19,10 @@ export const userSchema = mongoose.Schema(
         default: Date.now(),
       },
     },
+    workoutPlanCreatedMinOne: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamp: true },
 );
