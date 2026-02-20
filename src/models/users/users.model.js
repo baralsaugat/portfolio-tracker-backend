@@ -12,14 +12,18 @@ export const getUserByEmail = (emailArg) => {
   return userSchema.findOne({ email: emailArg });
 };
 
-export const getUserNameByUserId = (userIdArg) => {
-  return userSchema.findOne({ _id: userIdArg }).distinct("fName");
+export const getUserNameByUserId = async (userIdArg) => {
+  const user = await userSchema.findById(userIdArg).select("fName");
+
+  return user.fName;
 };
 
-export const getIsWorkOutCreationHistory = (userIdArg) => {
-  return userSchema
-    .findOne({ _id: userIdArg })
-    .distinct("workoutPlanCreatedMinOne");
+export const getIsWorkOutCreationHistory = async (userIdArg) => {
+  const userData = await userSchema
+    .findById(userIdArg)
+    .select("workoutPlanCreatedMinOne");
+
+  return userData.workoutPlanCreatedMinOne;
 };
 
 export const updateWorkOutPlanCreationByUserId = (userIdArg) => {

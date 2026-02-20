@@ -10,5 +10,5 @@ export const getWorkoutPlanByWorkoutId = (workoutIdArg) => {
 };
 
 export const getWorkOutplanHistoryByUserId = (userIdArg) => {
-  return workoutPlannerSchema.findOne({ userId: userIdArg });
+  return workoutPlannerSchema.find({ userId: userIdArg });
 };

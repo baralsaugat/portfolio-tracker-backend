@@ -56,15 +56,15 @@ export default router;
 router.get("/user/:userId", async (req, res) => {
   try {
     const { userId } = req.params;
-    const checkForWorkOutHistory = await getIsWorkOutCreationHistory(userId);
-    const isWorkOutHistory = checkForWorkOutHistory.workoutPlanCreatedMinOne;
+    const isWorkOutHistory = await getIsWorkOutCreationHistory(userId);
+
     const userName = await getUserNameByUserId(userId);
-    console.log(isWorkOutHistory);
 
     if (isWorkOutHistory) {
       const result = await getWorkOutplanHistoryByUserId(userId);
+      console.log(result);
 
-      if (result?._id) {
+      if (result) {
         return res.json({
           status: "success",
           message: "Workout plan created history available",
@@ -73,6 +73,10 @@ router.get("/user/:userId", async (req, res) => {
           isWorkOutHistory,
         });
       }
+      return res.json({
+        status: "error",
+        message: "could fetch workout data",
+      });
     }
     return res.json({
       status: "error",
