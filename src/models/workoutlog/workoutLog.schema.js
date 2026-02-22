@@ -24,6 +24,9 @@ export const workoutLogSchema = mongoose.Schema(
     userId: {
       type: String,
     },
+    workoutPlanId: {
+      type: String,
+    },
   },
   { timestamp: true },
 );

@@ -34,12 +34,60 @@ POST http://localhost:8000/api/v1/workoutplanner
 Content-Type: application/json
 
 
-    {"workOutPlannerName": "my workout plan", "refreshJWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhdWdhdEBnbWFpbC5jb20iLCJpYXQiOjE3NzEzMjkwMzMsImV4cCI6MTc3MTQxNTQzM30.wi4LZ-YKqRQVen9kmh3WHUUMmXpzrDq18UCsyACSoUA"
-, "exerciseName": "Incline Dumbbell Press"
-
+    {"workOutPlannerName": "dummy data 50 data sets", "refreshJWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhdWdhdEBnbWFpbC5jb20iLCJpYXQiOjE3NzE3MzIzODIsImV4cCI6MTc3MTgxODc4Mn0.EBL9AcGSXqnxdmnKOIoroDUKLy8bZZ2sbT0ihSXtWUg"
+, "workoutByDay":[
+  { "dayName": "1", "exerciseName": "Push-ups" },
+  { "dayName": "2", "exerciseName": "Squats" },
+  { "dayName": "3", "exerciseName": "Pull-ups" },
+  { "dayName": "4", "exerciseName": "Deadlifts" },
+  { "dayName": "5", "exerciseName": "Bench Press" },
+  { "dayName": "6", "exerciseName": "Shoulder Press" },
+  { "dayName": "7", "exerciseName": "Leg Press" },
+  { "dayName": "1", "exerciseName": "Bicep Curls" },
+  { "dayName": "2", "exerciseName": "Tricep Dips" },
+  { "dayName": "3", "exerciseName": "Lunges" },
+  { "dayName": "4", "exerciseName": "Calf Raises" },
+  { "dayName": "5", "exerciseName": "Leg Extensions" },
+  { "dayName": "6", "exerciseName": "Lat Pulldowns" },
+  { "dayName": "7", "exerciseName": "Seated Rows" },
+  { "dayName": "1", "exerciseName": "Face Pulls" },
+  { "dayName": "2", "exerciseName": "Dumbbell Flyes" },
+  { "dayName": "3", "exerciseName": "Incline Press" },
+  { "dayName": "4", "exerciseName": "Decline Press" },
+  { "dayName": "5", "exerciseName": "Upright Rows" },
+  { "dayName": "6", "exerciseName": "Lateral Raises" },
+  { "dayName": "7", "exerciseName": "Front Raises" },
+  { "dayName": "1", "exerciseName": "Hammer Curls" },
+  { "dayName": "2", "exerciseName": "Preacher Curls" },
+  { "dayName": "3", "exerciseName": "Concentration Curls" },
+  { "dayName": "4", "exerciseName": "Skull Crushers" },
+  { "dayName": "5", "exerciseName": "Overhead Extensions" },
+  { "dayName": "6", "exerciseName": "Kickbacks" },
+  { "dayName": "7", "exerciseName": "Romanian Deadlifts" },
+  { "dayName": "1", "exerciseName": "Good Mornings" },
+  { "dayName": "2", "exerciseName": "Hyperextensions" },
+  { "dayName": "3", "exerciseName": "Crunches" },
+  { "dayName": "4", "exerciseName": "Russian Twists" },
+  { "dayName": "5", "exerciseName": "Leg Raises" },
+  { "dayName": "6", "exerciseName": "Planks" },
+  { "dayName": "7", "exerciseName": "Mountain Climbers" },
+  { "dayName": "1", "exerciseName": "Burpees" },
+  { "dayName": "2", "exerciseName": "Jumping Jacks" },
+  { "dayName": "3", "exerciseName": "High Knees" },
+  { "dayName": "4", "exerciseName": "Box Jumps" },
+  { "dayName": "5", "exerciseName": "Kettlebell Swings" },
+  { "dayName": "6", "exerciseName": "Battle Ropes" },
+  { "dayName": "7", "exerciseName": "Rowing" },
+  { "dayName": "1", "exerciseName": "Cycling" },
+  { "dayName": "2", "exerciseName": "Swimming" },
+  { "dayName": "3", "exerciseName": "Running" },
+  { "dayName": "4", "exerciseName": "Walking" },
+  { "dayName": "5", "exerciseName": "Yoga" },
+  { "dayName": "6", "exerciseName": "Pilates" },
+  { "dayName": "7", "exerciseName": "Stretching" },
+  { "dayName": "1", "exerciseName": "Rest Day" }
+]
     }
-
-
 
 
 ###

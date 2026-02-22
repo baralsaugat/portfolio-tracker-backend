@@ -25,11 +25,11 @@ router.post("/", async (req, res) => {
       userEmail: userEmailFromUserSchema.email,
       userId: userEmailFromUserSchema._id,
     };
+    console.log(workOutData);
     const result = await createWorkOutPlan(workOutData);
     const workOutPlanId = result._id;
     const { workOutPlannerName, totalDaysOfWorkout, userId } = result;
     if (result?._id) {
-      console.log(userId);
       await updateWorkOutPlanCreationByUserId(userId);
       return res.json({
         status: "success",
@@ -62,7 +62,6 @@ router.get("/user/:userId", async (req, res) => {
 
     if (isWorkOutHistory) {
       const result = await getWorkOutplanHistoryByUserId(userId);
-      console.log(result);
 
       if (result) {
         return res.json({
