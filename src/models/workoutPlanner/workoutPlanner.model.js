@@ -6,7 +6,11 @@ export const createWorkOutPlan = (workourPlanObj) => {
 };
 
 export const getWorkoutPlanByWorkoutId = (workoutIdArg) => {
-  return workoutPlannerSchema.findOne({ _id: workoutIdArg });
+  return workoutPlannerSchema
+    .findById(workoutIdArg)
+    .select(
+      "workOutPlannerName userId userEmail workoutByDay totalDaysOfWorkout orderOfExerciseEachday isCreatedByUser dateCreated",
+    );
 };
 
 export const getWorkOutplanHistoryByUserId = (userIdArg) => {

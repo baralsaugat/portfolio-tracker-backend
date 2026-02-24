@@ -10,14 +10,16 @@ export const workoutPlannerSchema = mongoose.Schema(
       require: true,
     },
 
-    workoutByDay: {
-      dayName: {
-        type: String,
+    workoutByDay: [
+      {
+        dayName: { type: String },
+        exerciseName: [
+          {
+            type: String,
+          },
+        ],
       },
-      exerciseName: {
-        type: String,
-      },
-    },
+    ],
 
     totalDaysOfWorkout: {
       type: Number,
