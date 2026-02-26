@@ -128,3 +128,11 @@ GET http://localhost:8000/api/v1/workoutplanner/user/6970a5efc028a1d37d2048bd/wo
 
 ###
 GET http://localhost:8000/api/v1/workoutplanner/user/6970a5efc028a1d37d2048bd
+
+
+
+###
+POST http://localhost:8000/api/v1/workoutlog
+Content-Type: application/json
+
+{"workoutPlanId":"adfjkaldfas"}
