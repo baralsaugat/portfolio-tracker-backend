@@ -36,88 +36,9 @@ Content-Type: application/json
 
    {
   "workOutPlannerName": "Complete Weekly Workout Plan",
-  "refreshJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhdWdhdEBnbWFpbC5jb20iLCJpYXQiOjE3NzE5MzAzMTksImV4cCI6MTc3MjAxNjcxOX0.0yBVhHOFHk8_hRAsfBvqvgoY0SBicIj77-_8QIA__dU",
-  "workoutByDay": [
-    {
-      "dayName": "1",
-      "exerciseName": [
-        "Push-ups",
-        "Bench Press",
-        "Incline Dumbbell Press",
-        "Chest Flyes",
-        "Dips",
-        "Push-ups on Knees"
-      ]
-    },
-    {
-      "dayName": "2",
-      "exerciseName": [
-        "Pull-ups",
-        "Barbell Rows",
-        "Lat Pulldowns",
-        "Seated Cable Rows",
-        "Face Pulls",
-        "Deadlifts"
-      ]
-    },
-    {
-      "dayName": "3",
-      "exerciseName": [
-        "Back Squats",
-        "Romanian Deadlifts",
-        "Leg Press",
-        "Lunges",
-        "Calf Raises",
-        "Leg Extensions"
-      ]
-    },
-    {
-      "dayName": "4",
-      "exerciseName": [
-        "Overhead Press",
-        "Lateral Raises",
-        "Front Raises",
-        "Rear Delt Flyes",
-        "Shrugs",
-        "Arnold Press"
-      ]
-    },
-    {
-      "dayName": "5",
-      "exerciseName": [
-        "Barbell Curls",
-        "Hammer Curls",
-        "Tricep Pushdowns",
-        "Skull Crushers",
-        "Wrist Curls",
-        "Concentration Curls"
-      ]
-    },
-    {
-      "dayName": "6",
-      "exerciseName": [
-        "Running",
-        "Cycling",
-        "Jump Rope",
-        "Burpees",
-        "Mountain Climbers",
-        "High Knees"
-      ]
-    },
-    {
-      "dayName": "7",
-      "exerciseName": [
-        "Sun Salutations",
-        "Downward Dog",
-        "Warrior Poses",
-        "Child's Pose",
-        "Corpse Pose",
-        "Cat-Cow Stretch"
-      ]
-    }
-  ]
-}
-
+  "refreshJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhdWdhdEBnbWFpbC5jb20iLCJpYXQiOjE3NzIxNTc1NjksImV4cCI6MTc3MjI0Mzk2OX0.NmL1raqjQ3xJInPfeNSscb6iTVbgdigAEwv9gDIQLYk"
+ 
+   }
 ###
 
 

@@ -33,10 +33,9 @@ export const workoutPlannerSchema = mongoose.Schema(
       type: Boolean,
     },
     userId: {
-      type: String,
-    },
-    userEmail: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
   },
   { timestamp: true },
