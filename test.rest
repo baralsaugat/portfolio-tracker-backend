@@ -28,6 +28,10 @@ Content-Type: application/json
 
     {"exerciseName": "bench press", "exerciseType":"chest"}
 
+###
+GET  http://localhost:8000/api/v1/exercise
+Content-Type: application/json
+
 
 ### 
 POST http://localhost:8000/api/v1/workoutplanner

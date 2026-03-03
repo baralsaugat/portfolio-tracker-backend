@@ -1,5 +1,8 @@
 import express from "express";
-import { createExercise } from "../models/exercise/exercise.model.js";
+import {
+  createExercise,
+  getExercises,
+} from "../models/exercise/exercise.model.js";
 
 const router = express.Router();
 
@@ -27,3 +30,24 @@ router.post("/", async (req, res) => {
 });
 export default router;
 
+router.get("/", async (req, res) => {
+  try {
+    const result = await getExercises();
+    if (result) {
+      res.json({
+        status: "success",
+        message: "list of exercises",
+        result,
+      });
+    }
+    res.json({
+      status: "error",
+      message: "couldnot fetch the exercises",
+    });
+  } catch (error) {
+    res.json({
+      status: "error",
+      message: error.message,
+    });
+  }
+});

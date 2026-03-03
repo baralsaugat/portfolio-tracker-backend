@@ -7,11 +7,25 @@ export const exerciseSchema = mongoose.Schema(
       required: true,
     },
     exerciseType: { type: String },
+    muscleGroup: {
+      type: String,
+      enum: [
+        "chest",
+        "back",
+        "shoulders",
+        "biceps",
+        "triceps",
+        "legs",
+        "core",
+        "whole body",
+        "cardio",
+      ],
+      required: true,
+    },
     exerciseOptionals: {
       type: String,
     },
-    repsRecommended: { Number },
-    restRecommended: { Number },
+
     exerciseImage: {
       type: String,
     },
