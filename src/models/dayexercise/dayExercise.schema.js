@@ -3,12 +3,12 @@ import mongoose from "mongoose";
 export const dayExerciseSchema = mongoose.Schema(
   {
     workoutDayId: {
-      type: Mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "WorkOutDay",
       require: true,
     },
     exerciseId: {
-      type: Mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Exercise",
       required: true,
     },
@@ -17,7 +17,7 @@ export const dayExerciseSchema = mongoose.Schema(
     },
     sets: {
       type: Number,
-      required: true,
+   
       min: 1,
     },
     repsRange: {
@@ -32,4 +32,4 @@ export const dayExerciseSchema = mongoose.Schema(
   { timestamp: true },
 );
 
-export default mongoose.model("WorkOutDay", dayExerciseSchema);
+export default mongoose.model("DayExercise", dayExerciseSchema);

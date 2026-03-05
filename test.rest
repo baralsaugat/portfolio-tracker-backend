@@ -60,4 +60,25 @@ GET http://localhost:8000/api/v1/workoutplanner/user/6970a5efc028a1d37d2048bd
 POST http://localhost:8000/api/v1/workoutlog
 Content-Type: application/json
 
-{"workoutPlanId":"adfjkaldfas"}
+{"workoutPlanId":"adfjkaldf"}
+
+
+###
+POST http://localhost:8000/api/v1/workoutday
+Content-Type: application/json
+
+{"workoutPlanId":"69775c647f2064b800eccf94"}
+
+
+###
+POST http://localhost:8000/api/v1/dayexercise
+Content-Type: application/json
+
+{"workoutDayId":"69a8d02c50c181bf7a7b4bbb","exerciseId":"69a8d02c50c181bf7a7b4bbb" }
+
+
+
+
+
+
+

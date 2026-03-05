@@ -9,12 +9,12 @@ export const workoutDaySchema = mongoose.Schema(
     },
     dayNumber: {
       type: Number,
-      required: true,
+
       min: 1,
     },
     dayName: {
       type: String,
-      required: true,
+
       trim: true,
     },
     description: String,

@@ -16,11 +16,11 @@ const setLogSchema = mongoose.Schema({
 });
 
 const exerciseLogSchema = new mongoose.Schema({
-  dayExercise: {
+  dayExerciseId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "DayExercise",
   },
-  exercise: {
+  exerciseId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Exercise",
   },
@@ -29,15 +29,15 @@ const exerciseLogSchema = new mongoose.Schema({
 });
 const workoutLogSchema = new mongoose.Schema(
   {
-    user: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-    workoutPlan: {
+    workoutPlanId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "WorkoutPlan",
     },
-    workoutDay: {
+    workoutDayId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "WorkoutDay",
       required: true,
