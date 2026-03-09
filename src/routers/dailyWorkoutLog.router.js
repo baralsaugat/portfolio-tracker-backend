@@ -5,8 +5,8 @@ const router = express.Router();
 // creating workoutplan
 router.post("/", async (req, res) => {
   try {
-    const { workoutDayId, exerciseId, dayExerciseId, userId, workoutPlanId } =
-      req.body;
+    const { workoutDayId } = req.params;
+    const { exerciseId, dayExerciseId, userId, workoutPlanId } = req.body;
 
     const newData = {
       ...req.body,
