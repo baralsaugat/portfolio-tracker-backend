@@ -44,7 +44,6 @@ const workoutLogSchema = new mongoose.Schema(
     },
     scheduledDate: {
       type: Date,
-      required: true,
     },
     completedDate: {
       type: Date,
@@ -71,4 +70,4 @@ const workoutLogSchema = new mongoose.Schema(
   { timestamp: true },
 );
 
-export default mongoose.model("DailyWorkOutTracker", dailyWorkOutTrackerSchema);
+export default mongoose.model("DailyWorkOutTracker", workoutLogSchema);

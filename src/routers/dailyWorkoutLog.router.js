@@ -1,5 +1,5 @@
 import express from "express";
-import { createDailyWorkoutLog } from "../models/dailyWorkoutTracker/dailyWorkoutTracker.schema.js";
+import { createDailyWorkoutLog } from "../models/dailyWorkoutTracker/dailyWorkoutTracker.model.js";
 const router = express.Router();
 
 // creating workoutplan
