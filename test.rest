@@ -85,7 +85,7 @@ POST http://localhost:8000/api/v1/workoutlog
 Content-Type: application/json
 
 {
-    "dayExerciseId":"69b157556d1d967b26d8302b", "workoutDayId":"69a8d02c50c181bf7a7b4bbb", { }
+    "dayExerciseId":"69b157556d1d967b26d8302b", "workoutDayId":"69a8d02c50c181bf7a7b4bbb", "exercises":{"dayExerciseId ": "69a8d02c50c181bf7a7b4bbb","set":{"setNumber":1,"weight":60, "reps":12}}
 }
 
 
