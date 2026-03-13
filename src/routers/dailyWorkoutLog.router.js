@@ -36,4 +36,33 @@ router.post("/", async (req, res) => {
     });
   }
 });
+
+
+
+router.get("/user/:userId/workoutplan/:workoutplanId", async (req, res) => {
+  try {
+    const { userId, workoutplanId } = req.params;
+
+    const result = await getWorkoutPlanByWorkoutId(workoutplanId);
+    console.log(result);
+    if (result) {
+      return res.json({
+        status: "success",
+        message: "list of the workout plan",
+        result,
+      });
+    } else {
+      return res.json({
+        status: "error",
+        message: "could not get the workout data",
+      });
+    }
+  } catch (error) {
+    res.json({
+      status: "error",
+      message: error.message,
+    });
+  }
+});
+
 export default router;
