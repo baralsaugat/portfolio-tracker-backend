@@ -3,7 +3,7 @@ import express from "express";
 const router = express.Router();
 
 import { hashPassword } from "../helpers/bcrypt.helper.js";
-import { createUser } from "../models/users/users.model.js";
+import { createUser, updatePassword } from "../models/users/users.model.js";
 
 // registration
 router.post("/", async (req, res) => {
@@ -22,6 +22,31 @@ router.post("/", async (req, res) => {
     res.json({
       status: "error",
       message: "could not register this account",
+    });
+  } catch (error) {
+    res.json({
+      status: "error",
+      message: error.message,
+    });
+  }
+});
+
+router.put("/", async (req, res) => {
+  try {
+    const { token, password } = req.body;
+   
+    const hashPass = await hashPassword(password);
+    const result = await updatePassword(token, hashPass);
+    if (result._id) {
+      return res.json({
+        status: "success",
+        message: "your password has been updated",
+        result
+      });
+    }
+    res.json({
+      status: "error",
+      message: "password could not be updated",
     });
   } catch (error) {
     res.json({

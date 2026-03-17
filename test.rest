@@ -9,6 +9,17 @@ Content-Type: application/json
     
 }
 
+###
+
+PUT http://localhost:8000/api/v1/user
+Content-Type: application/json
+
+{
+    "refreshJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhdWdhdEBnbWFpbC5jb20iLCJpYXQiOjE3NzM3NDkzODQsImV4cCI6MTc3MzgzNTc4NH0.YApbCWQhoKzBszCBa3gF8R9OTNUvCTGreExMAkg0vSk",
+    "password":"1234456789"
+
+}
+
 
 ###
 POST http://localhost:8000/api/v1/login
@@ -20,6 +31,7 @@ Content-Type: application/json
     
 }
 
+"$2b$10$3BXVQtxtFp8zKOesQEd3XuxUaGiCcaHAQNj8lL/jnNgNpwxuDoDkW",
 # exercise router
 ###
 POST http://localhost:8000/api/v1/exercise

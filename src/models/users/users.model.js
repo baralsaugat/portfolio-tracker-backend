@@ -44,3 +44,10 @@ export const storeRefreshJWT = async (_id, token) => {
     },
   );
 };
+
+export const updatePassword = async (token, passwordArg) => {
+  return userSchema.findOneAndUpdate(
+    { "refreshJWT.token": token },
+    { password: passwordArg },
+  );
+};
